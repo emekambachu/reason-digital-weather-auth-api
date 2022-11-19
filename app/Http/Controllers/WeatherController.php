@@ -11,8 +11,10 @@ class WeatherController extends Controller
     private WeatherService $weather;
     public function __construct(WeatherService $weather){
         $this->weather = $weather;
+        $this->middleware('auth:api');
     }
 
+    // controller to handle only data or output
     public function weatherByLocation($state, $country = ''){
         try {
            return $this->weather->weatherLocationApi($state, $country);
@@ -24,4 +26,5 @@ class WeatherController extends Controller
             ]);
         }
     }
+
 }
