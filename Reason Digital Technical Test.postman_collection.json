@@ -1,0 +1,273 @@
+{
+	"info": {
+		"_postman_id": "da2f6ba2-075b-4e15-82a0-4cc78924b252",
+		"name": "Reason Digital Technical Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8728302"
+	},
+	"item": [
+		{
+			"name": "Get Waether By Location",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9hcHB0ZXN0LnJlbnRjaXJjbGVzLmNvbVwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTY2ODg3NTc5NywiZXhwIjoxNjY4ODc5Mzk3LCJuYmYiOjE2Njg4NzU3OTcsImp0aSI6IkJWdjZwUzR5Rno5Y2dBNGciLCJzdWIiOjUsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.Ne_0kSWpv9Xe0S4ASoD5vn9leqXwJiabfMJ1xIsqdQg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://apptest.rentcircles.com/api/weather/location/berlin",
+					"protocol": "http",
+					"host": [
+						"apptest",
+						"rentcircles",
+						"com"
+					],
+					"path": [
+						"api",
+						"weather",
+						"location",
+						"berlin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register User",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Neutron",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "neutron@email.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "22222222",
+							"type": "text"
+						},
+						{
+							"key": "password_confirmation",
+							"value": "22222222",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://apptest.rentcircles.com/api/auth/register",
+					"protocol": "http",
+					"host": [
+						"apptest",
+						"rentcircles",
+						"com"
+					],
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login User",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Dexter",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "email",
+							"value": "neutron@email.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "22222222",
+							"type": "text"
+						},
+						{
+							"key": "password_confirmation",
+							"value": "11111111",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://apptest.rentcircles.com/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"apptest",
+						"rentcircles",
+						"com"
+					],
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Token Refresh",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTY2ODg1NDgwOCwiZXhwIjoxNjY4ODU4NDA4LCJuYmYiOjE2Njg4NTQ4MDgsImp0aSI6Ind6MkJkVVpxc1FUSlUwVjMiLCJzdWIiOjEsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.1S-98Qlfw0SXmcKURtWHk9uFTn2L1-BJdyLKwHnRbgw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://apptest.rentcircles.com/api/auth/refresh",
+					"protocol": "http",
+					"host": [
+						"apptest",
+						"rentcircles",
+						"com"
+					],
+					"path": [
+						"api",
+						"auth",
+						"refresh"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logout User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9hcHB0ZXN0LnJlbnRjaXJjbGVzLmNvbVwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTY2ODg3NTc5NywiZXhwIjoxNjY4ODc5Mzk3LCJuYmYiOjE2Njg4NzU3OTcsImp0aSI6IkJWdjZwUzR5Rno5Y2dBNGciLCJzdWIiOjUsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.Ne_0kSWpv9Xe0S4ASoD5vn9leqXwJiabfMJ1xIsqdQg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://apptest.rentcircles.com/api/auth/logout",
+					"protocol": "http",
+					"host": [
+						"apptest",
+						"rentcircles",
+						"com"
+					],
+					"path": [
+						"api",
+						"auth",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logged In User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9hcHB0ZXN0LnJlbnRjaXJjbGVzLmNvbVwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTY2ODg3NTc5NywiZXhwIjoxNjY4ODc5Mzk3LCJuYmYiOjE2Njg4NzU3OTcsImp0aSI6IkJWdjZwUzR5Rno5Y2dBNGciLCJzdWIiOjUsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.Ne_0kSWpv9Xe0S4ASoD5vn9leqXwJiabfMJ1xIsqdQg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://apptest.rentcircles.com/api/user",
+					"protocol": "http",
+					"host": [
+						"apptest",
+						"rentcircles",
+						"com"
+					],
+					"path": [
+						"api",
+						"user"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
