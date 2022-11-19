@@ -16,6 +16,10 @@ class AuthService
         $this->user = $user;
     }
 
+    /**
+     * Register user with user function from the UserService Class
+     * Return data to controller in array
+     */
     public function registerUser($request): array
     {
         $user = $this->user->user()->create(array_merge(
@@ -29,6 +33,13 @@ class AuthService
         ];
     }
 
+    /**
+     * Get the token array structure.
+     *  Create token function and return data as array
+     *
+     * check if user credentials are correct and generate token
+     * return token to AuthController
+     */
     public function loginUser($request): array
     {
         $token = Auth::guard('api')->attempt($request->only('email', 'password'));
@@ -43,7 +54,7 @@ class AuthService
 
     /**
      * Get the token array structure.
-     *
+     *  Create token function and return data as array
      * @param string $token
      *
      * @return array

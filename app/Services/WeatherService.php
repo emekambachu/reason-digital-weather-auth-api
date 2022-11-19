@@ -10,7 +10,6 @@ use GuzzleHttp\Exception\GuzzleException;
  */
 class WeatherService
 {
-    // third party weather API
     protected string $weatherApi = 'https://api.openweathermap.org/data/2.5/weather?q=';
 
     public function httpClient(): Client
